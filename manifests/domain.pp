@@ -231,7 +231,7 @@ define sssd::domain (
   $entry_cache_timeout = 60,
   $krb5_canonicalize = false,
 ) {
-  validate_array($simple_allow_groups)
+  #validate_array($simple_allow_groups)
   validate_bool($ldap_id_use_start_tls)
   validate_bool($enumerate)
   validate_bool($ldap_force_upper_case_realm)
@@ -239,7 +239,7 @@ define sssd::domain (
   validate_bool($cache_credentials)
   validate_bool($krb5_canonicalize)
   validate_re($ldap_tls_reqcert,['hard','demand','try','allow','never'])
-  validate_re($ldap_default_authtok_type,['password','obfuscated_password'])
+  #validate_re($ldap_default_authtok_type,['password','obfuscated_password'])
   validate_re($ldap_schema,['rfc2307','rfc2307bis','ipa','ad'])
   
   include sssd::params

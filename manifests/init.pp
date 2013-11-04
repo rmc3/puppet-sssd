@@ -77,7 +77,7 @@ class sssd (
   }
 
   exec { 'authconfig-sssd':
-    command     => '/usr/sbin/authconfig --enablesssd --enablesssdauth --enablelocauthorize --update',
+    command     => '/usr/sbin/authconfig --enableshadow --enablemd5 --enableldap --enableldapauth --enableldaptls --enablelocauthorize --enablemkhomedir --update',
     refreshonly => true,
     subscribe   => Concat['sssd_conf'],
   }
